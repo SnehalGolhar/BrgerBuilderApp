@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Aux from '../Auxhoc/Aux';
+import Aux from '../Auxhoc/Auxhoc';
 import classes from '../Layout/Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
