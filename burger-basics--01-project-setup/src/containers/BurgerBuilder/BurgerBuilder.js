@@ -109,35 +109,19 @@ purchaseCancelHandler = () => {
 }
 
 purchaseContinueHandler = () => {
-    this.setState({
-        loading:true,
-        purchasing:false
-    });
-    const orders={
-        ingredients:this.state.ingredients,
-        price:this.state.totalPrice,
-        customer:{
-            name: 'Snehal Golhar',
-            Address:{
-                street:'101 E San Fernando',
-                city:'Fremont',
-                zipcode:'94538',
-                State:'California' 
-            },
-            deliveryMethod:'fastest'  
-        }
+   
+
+    const queryParams=[];
+    for(let i in this.state.ingredients){
+          queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
     }
-             axios.post('/orders.json',orders)
-             .then(response=>{
-                 this.setState({
-                      loading:false,
-                      purchasing:false
-                 });
-                 console.log(response);
-             })
-             .catch(error=>{
-                 console.log('error', error);
-             });
+    queryParams.push('price=' + this.state.totalPrice);
+    const queryString= queryParams.join('&');
+    this.props.history.push({
+        pathname:'/checkout',
+        search: '?'+queryString
+
+    });
 }
 
 

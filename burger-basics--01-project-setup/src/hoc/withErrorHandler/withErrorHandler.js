@@ -17,11 +17,7 @@ const WithErrorHandler = (WrappedComponent,axios) => {
 
             this.resInterceptors=axios.interceptors.response.use(res=>res,error=>{
             this.setState({error:error});
-            
           });
-
-         
-
         }
 
         componentWillUnmount(){
