@@ -77,7 +77,7 @@ addingredienthandler=(type)=>{
   })
 
   this.updatePurchasableState(updatedIngridient);
-  console.log(this.state.totalPrice);
+
 }
 
 removeIngredientHandler=(type)=>{

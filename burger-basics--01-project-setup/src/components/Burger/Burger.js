@@ -3,8 +3,7 @@ import classes from './Burger.css';
 import {withRouter} from 'react-router-dom';
 import BurgerIngredient from './BurgeringredIent/BurgerIngredient';
 
-const burger=(props)=>{
-    console.log(props);
+const burger=(props)=>{   
     let transformedIng=Object.keys(props.ingredients)
     .map(igKey=>{
         return [...Array(props.ingredients[igKey])].map((_,i)=>{
